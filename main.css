@@ -10,7 +10,7 @@ body {
   height: 100vh;
   width: 100vw;
   grid-template-columns: 70vw auto 20vw;
-  grid-template-rows: 10vh auto 10vh;
+  grid-template-rows: 50px auto 10vh;
   grid-template-areas:
     'header header header'
     'main main main'
@@ -21,7 +21,6 @@ body {
   grid-area: header;
   display: flex;
   flex-direction: column;
-  height: 10vh;
   width: inherit;
   background-color: rgb(0, 109, 117);
 }
@@ -33,19 +32,19 @@ body {
 
 @keyframes showMenu {
   from {
-    height: 0vh;
+    height: 0px;
   }
   to {
-    height: 30vh;
+    height: 140px;
   }
 }
 
 @keyframes hideMenu {
   from {
-    height: 30vh;
+    height: 140px;
   }
   to {
-    height: 0vh;
+    height: 0px;
   }
 }
 
@@ -55,21 +54,22 @@ body {
   justify-self: end;
   display: none;
   flex-direction: column;
-  height: 30vh;
+  height: 140px;
   width: 20vw;
-  background-color: rgba(0, 109, 117, .8);
-  /* animation-name: showMenu; */
-  animation-duration: 0.5s;
+  background-color: rgba(0, 109, 117, 0.8);
+  animation-duration:  500ms;
+  animation-timing-function: linear;
 }
 
 .main-nav-link {
   text-align: center;
-  height: 2rem;
+  height: inherit;
   padding: 6% 3% 3% 3%;
+  overflow: hidden;
 }
 
 .main-nav-link:hover {
-  background-color: rgba(200, 200, 200, .4);
+  background-color: rgba(200, 200, 200, 0.4);
 }
 
 #main-content {
@@ -82,11 +82,25 @@ body {
   border: #fff dotted 2px;
   margin-top: 3%;
   padding-left: 3%;
+  padding-right: 3%;
 }
 
 .player-lists h2 {
-  margin-top: 2%
+  margin-top: 2%;
 }
+.player-lists ul {
+  padding: 0%;
+}
+
 .player-lists li {
   display: block;
+  padding: 3%;
+}
+
+.drag-start {
+  border: rgb(234, 114, 0) dotted 1px;
+}
+
+.drag-over {
+  background-color: rgba(234, 114, 0, 0.2);
 }
